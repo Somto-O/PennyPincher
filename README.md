@@ -1,2 +1,2 @@
-# XAI-Tool
-Visual tool that interprets decisions from a black-box model, with a simple GUI (in progress...)
+# A Price-Matching System
+A self-hosted price-matching ecosystem on a private Linux-based server.
