@@ -1,0 +1,13 @@
+{
+    "name": "retail-sentinel-backend",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "express": "^4.21.0",
+        "pg": "^8.11.3"
+    }
+}

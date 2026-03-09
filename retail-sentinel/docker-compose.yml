@@ -1,0 +1,23 @@
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: sentinel-db
+    restart: always
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data # Persists data to HDD
+
+  backend:
+    build: ./backend
+    container_name: sentinel-api
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: postgres://${DB_USER}:${DB_PASSWORD}@db:5432/${DB_NAME}
+    depends_on:
+      - db
